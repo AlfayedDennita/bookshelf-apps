@@ -446,10 +446,12 @@ main {
 
 .book-card .book-info .book-title {
   font-size: 1.1rem;
+  word-break: break-word;
 }
 
 .book-card .book-info .book-description {
   font-size: 0.85rem;
+  word-break: break-word;
 }
 
 .book-card .book-actions {
@@ -502,6 +504,7 @@ main {
   font-size: 0.8rem;
   color: rgba(var(--text-color-rgb), 0.75);
   border-radius: 10rem;
+  word-break: break-word;
 }
 
 #filters ul li b {
@@ -517,4 +520,5 @@ main {
 
 .dialog .section-card-content p {
   line-height: 1.5;
+  word-break: break-word;
 }
