@@ -151,7 +151,7 @@ form {
 
 form .form-section {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -391,7 +391,6 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  flex-wrap: wrap;
   padding: 1.5rem 0;
   border-bottom: 1px solid rgba(var(--gray-color-rgb), 0.5);
 }
@@ -458,7 +457,6 @@ main {
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
-  flex-wrap: wrap;
 }
 
 .book-card .book-actions button {
