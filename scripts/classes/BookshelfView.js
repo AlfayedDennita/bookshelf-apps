@@ -172,7 +172,7 @@ class BookshelfView {
         title: input.title.value,
         author: input.author.value,
         year: Number(input.year.value),
-        isComplete: input.isComplete.checked ? true : false,
+        isComplete: input.isComplete.checked,
       };
 
       this._bookshelf.editBook(id, newBook);

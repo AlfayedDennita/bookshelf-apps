@@ -316,6 +316,10 @@ dialog {
   background-color: rgba(var(--primary-color-rgb), 0.1);
 }
 
+#main-header nav ul li button span {
+  text-align: left;
+}
+
 @media (min-width: 768px) {
   #main-header #open-menu-button {
     display: none;
@@ -387,7 +391,9 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
   padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(var(--gray-color-rgb), 0.5);
 }
 
 .section-card header h2 {
@@ -397,11 +403,22 @@ main {
 .section-card .section-card-content {
   display: none;
   padding: 1.5rem 0;
-  border-top: 1px solid rgba(var(--gray-color-rgb), 0.5);
 }
 
 .section-card[data-open="true"] .section-card-content {
   display: block;
+}
+
+.section-card footer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(var(--gray-color-rgb), 0.5);
+}
+
+.section-card footer > button {
+  flex: 1 1 0;
 }
 
 /* Book Card */
@@ -417,6 +434,7 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(var(--gray-color-rgb), 0.25);
 }
@@ -426,22 +444,21 @@ main {
   border: none;
 }
 
-.book-card > * {
-  flex: 1 1 0;
-}
-
 .book-card .book-info .book-title {
   font-size: 1.1rem;
+  word-break: break-all;
 }
 
 .book-card .book-info .book-description {
   font-size: 0.85rem;
+  word-break: break-all;
 }
 
 .book-card .book-actions {
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .book-card .book-actions button {
@@ -487,6 +504,7 @@ main {
   font-size: 0.8rem;
   color: rgba(var(--text-color-rgb), 0.75);
   border-radius: 10rem;
+  word-break: break-word;
 }
 
 #filters ul li b {
@@ -500,23 +518,7 @@ main {
   font-size: 1.5rem;
 }
 
-.dialog .dialog-content {
-  padding: 1.5rem 0;
-  border-top: 1px solid rgba(var(--gray-color-rgb), 0.5);
-  border-bottom: 1px solid rgba(var(--gray-color-rgb), 0.5);
-}
-
-.dialog .dialog-content p {
+.dialog .section-card-content p {
   line-height: 1.5;
-}
-
-.dialog footer {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: nowrap;
-  padding: 1.5rem 0;
-}
-
-.dialog footer button {
-  flex: 1 1 0;
+  word-break: break-all;
 }

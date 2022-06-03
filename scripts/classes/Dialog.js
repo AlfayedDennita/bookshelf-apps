@@ -37,7 +37,7 @@ class Dialog {
         <h2>Perhatian</h2>
         <button class="close-dialog-button" type="button" title="Tutup"><i class="fas fa-xmark"></i></button>
       </header>
-      <section class="dialog-content">
+      <section class="section-card-content">
         <p>${message}</p>
       </section>
       <footer>
@@ -77,7 +77,7 @@ class Dialog {
         <h2>Konfirmasi</h2>
         <button class="cancel-dialog-button" type="button" title="Tutup"><i class="fas fa-xmark"></i></button>
       </header>
-      <section class="dialog-content">
+      <section class="section-card-content">
         <p>${message}</p>
       </section>
       <footer>

@@ -68,8 +68,8 @@ class Bookshelf {
         matchConditions = [
           filter.title ? book.title.toLowerCase().indexOf(filter.title.toLowerCase()) >= 0 : true,
           filter.author ? book.author.toLowerCase().indexOf(filter.author.toLowerCase()) >= 0 : true,
-          filter.startYear ? filter.startYear < book.year : true,
-          filter.endYear ? filter.endYear > book.year : true,
+          filter.startYear ? filter.startYear <= book.year : true,
+          filter.endYear ? filter.endYear >= book.year : true,
         ];
       }
 
@@ -96,7 +96,7 @@ class Bookshelf {
   }
 
   removeBook(id) {
-    this._books = this._books.filter(book => book.id !== id);
+    this._books = this._books.filter((book) => book.id !== id);
     this.saveBooksToStorage();
   }
 
