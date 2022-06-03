@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Save your book here!">
+    <meta name="keyword" content="book, books, bookshelf">
+    <meta name="author" content="Muhammad Alfayed Dennita">
+    <meta name="theme-color" content="#e827ae">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Kanit:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Bookshelf Apps</title>
+  </head>
+  <body data-scroll="true" data-theme="day">
+    <header id="main-header">
+      <div class="container">
+        <h1><a href="" title="Bookshelf Apps">Bookshelf Apps</a></h1>
+        <button id="open-menu-button" type="button" title="Buka Menu"><i class="fas fa-bars"></i></button>
+        <nav>
+          <ul>
+            <li><button id="close-menu-button" type="button" title="Tutup Menu"><i class="fas fa-xmark fa-fw"></i> <span>Tutup Menu</span></button></li>
+            <li><button id="theme-toggler" type="button" title="Beralih ke Mode Malam"><i class="fas fa-cloud-moon fa-fw"></i> <span>Beralih ke Mode Malam</span></button></li>
+            <li><button id="delete-books-button" type="button" title="Hapus Semua Buku"><i class="fas fa-trash-can fa-fw"></i> <span>Hapus Semua Buku</span></button></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="add-book" class="section-card container-small" data-open="true">
+        <header>
+          <h2>Tambah Buku</h2>
+          <button class="hide-button" type="button" title="Sembunyikan"><i class="fas fa-eye fa-fw"></i></button>
+        </header>
+        <section class="section-card-content">
+          <form action="" method="post">
+            <label class="input-group" title="Judul Buku">
+              Judul
+              <input type="text" name="title" required>
+            </label>
+            <label class="input-group" title="Penulis Buku">
+              Penulis
+              <input type="text" name="author" required>
+            </label>
+            <label class="input-group" title="Tahun Terbit Buku">
+              Tahun Terbit
+              <input type="number" name="year" min="1" max="2999" required>
+            </label>
+            <label class="input-group-horizontal" title="Buku telah selesai dibaca">
+              <input type="checkbox" name="isComplete">
+              Buku telah selesai dibaca
+            </label>
+            <section class="form-buttons">
+              <button class="button" type="submit" title="Tambah Buku">Tambah Buku <i class="fas fa-plus"></i></button>
+            </section>
+          </form>
+        </section>
+      </section>
+
+      <section id="filter-books" class="section-card container-small" data-open="true">
+        <header>
+          <h2>Filter Buku</h2>
+          <button class="hide-button" type="button" title="Sembunyikan"><i class="fas fa-eye fa-fw"></i></button>
+        </header>
+        <section class="section-card-content">
+          <form action="" method="post">
+            <label class="input-group" title="Judul Buku">
+              Judul
+              <input type="text" name="title">
+            </label>
+            <label class="input-group" title="Penulis Buku">
+              Penulis
+              <input type="text" name="author">
+            </label>
+            <section class="form-section">
+              <label class="input-group" title="Tahun Terbit Buku (Dari)">
+                Tahun Terbit (Dari)
+                <input type="number" name="startYear" min="1" max="2999">
+              </label>
+              <label class="input-group" title="Tahun Terbit Buku (Sampai)">
+                Tahun Terbit (Sampai)
+                <input type="number" name="endYear" min="1" max="2999">
+              </label>
+            </section>
+            <section class="form-buttons">
+              <button class="button-alternative" type="reset" title="Hapus Filter"><i class="fas fa-eraser"></i> Hapus Filter</button>
+              <button class="button" type="submit" title="Terapkan Filter"><i class="fas fa-sliders"></i> Terapkan Filter</button>
+            </section>
+          </form>
+        </section>
+      </section>
+
+      <section id="filters" class="container-small" data-show="false">
+        <h2>Filter aktif:</h2>
+        <ul></ul>
+      </section>
+
+      <section id="uncompleted-books" class="section-card container-small" data-open="true">
+        <header>
+          <h2>Buku yang Belum Selesai Dibaca</h2>
+          <button class="hide-button" type="button" title="Sembunyikan"><i class="fas fa-eye fa-fw"></i></button>
+        </header>
+        <section class="section-card-content">
+          <ul class="book-card-container">
+          </ul>
+        </section>
+      </section>
+
+      <section id="completed-books" class="section-card container-small" data-open="true">
+        <header>
+          <h2>Buku yang Telah Selesai Dibaca</h2>
+          <button class="hide-button" type="button" title="Sembunyikan"><i class="fas fa-eye fa-fw"></i></button>
+        </header>
+        <section class="section-card-content">
+          <ul class="book-card-container">
+          </ul>
+        </section>
+      </section>
+
+      <section id="edit-book-modal" class="modal-container">
+        <dialog id="edit-book" class="section-card container-small" open data-open="true">
+          <header>
+            <h2>Edit Buku</h2>
+            <button class="close-modal-button" type="button" title="Tutup"><i class="fas fa-xmark"></i></button>
+          </header>
+          <section class="section-card-content"></section>
+        </dialog>
+      </section>
+    </main>
+
+    <section id="custom-dialog-modal" class="modal-container">
+      <dialog class="dialog section-card container-small" open></dialog>
+    </section>
+
+    <script src="./scripts/main.js" type="module"></script>
+  </body>
+</html>
